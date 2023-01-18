@@ -10,15 +10,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th>1</th>
-            <td>Javier</td>
-            <td>Lete</td>
-            <td>612123123</td>
-            <td>javier@email.net</td>
+        <tr *ngFor="let c of clientes">
+            <th>{{c.id}}</th>
+            <td>{{c.nombre}}</td>
+            <td>{{c.apellidos}}</td>
+            <td>{{c.telefono}}</td>
+            <td>{{c.email}}</td>
             <td>
-                <a routerLink="/formulario">Editar</a>
-                <a href="#">Borrar</a>
+                <a routerLink="/formulario/{{c.id}}">Editar</a>
+                <a routerLink="/listado" (click)="borrar(c.id)">Borrar</a>
             </td>
         </tr>
     </tbody>
