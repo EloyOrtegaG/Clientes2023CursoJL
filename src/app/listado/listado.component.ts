@@ -21,6 +21,8 @@ export class ListadoComponent implements OnInit {
   }
 
   borrar(id: number): void {
-    this.clienteService.borrar(id).subscribe();
+    this.clienteService.borrar(id).subscribe(
+      () => this.ngOnInit()
+    );
   }
 }
