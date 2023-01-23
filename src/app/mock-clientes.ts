@@ -1,7 +1,0 @@
-import { Cliente } from "./cliente";
-
-export const CLIENTES: Cliente[] = [
-    { id: 1, nombre: 'Javier', apellidos: 'Lete', telefono: '612123123', email: 'javier@email.net' },
-    { id: 2, nombre: 'Pepe', apellidos: 'Pérez', telefono: '621321321', email: 'pepe@email.net' },
-    { id: 3, nombre: 'Juan', apellidos: 'González', telefono: '612345678', email: 'juan@email.net' },
-];
