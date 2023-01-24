@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ListadoComponent } from './listado/listado.component';
+import { LabelInputComponent } from './label-input/label-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoComponent,
-    FormularioComponent
+    FormularioComponent,
+    LabelInputComponent
   ],
   imports: [
     BrowserModule,

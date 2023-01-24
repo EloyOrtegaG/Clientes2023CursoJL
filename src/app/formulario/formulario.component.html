@@ -1,37 +1,11 @@
 <div>
-    <div class="row mb-3">
-        <label class="col-sm-2 col-form-label" for="id">Id</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="number" readonly id="id" value="{{cliente.id}}">
-        </div>
-    </div>
-    <div class="row mb-3">
-        <label class="col-sm-2 col-form-label" for="nombre">Nombre</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="text" [(ngModel)]="cliente.nombre">
-        </div>
-    </div>
-    <div class="row mb-3">
-        <label class="col-sm-2 col-form-label" for="apellidos">Apellidos</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="text" id="apellidos" [(ngModel)]="cliente.apellidos">
-        </div>
-    </div>
-    <div class="row mb-3">
-        <label class="col-sm-2 col-form-label" for="telefono">Teléfono</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="tel" id="telefono" [(ngModel)]="cliente.telefono">
-        </div>
-    </div>
-    <div class="row mb-3">
-        <label class="col-sm-2 col-form-label" for="email">Email</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="email" id="email" [(ngModel)]="cliente.email">
-        </div>
-    </div>
-    <div class="row mb-3">
-        <div class="offset-sm-2 col-sm-10">
-            <button class="btn btn-primary" (click)="guardar()">Aceptar</button>
-        </div>
-    </div>
+    <jl-label-input id="id" etiqueta="Id" tipo="number" [(dato)]="cliente.id" [soloLectura]="true" />
+    <jl-label-input id="nombre" etiqueta="Nombre" [(dato)]="cliente.nombre" />
+    <jl-label-input id="apellidos" etiqueta="Apellidos" [(dato)]="cliente.apellidos" />
+    <jl-label-input id="telefono" etiqueta="Teléfono" tipo="tel" [(dato)]="cliente.telefono" />
+    <jl-label-input id="email" etiqueta="Email" tipo="email" [(dato)]="cliente.email" />
+    <jl-label-input tipo="button" etiqueta="Aceptar" (botonClick)="guardar()"/>
 </div>
+
+<!--<app-label-input id="nombre" [etiqueta]="'Nombre'" tipo="text" [dato]="cliente.nombre"
+    (datoChange)="cliente.nombre = $event" />-->
