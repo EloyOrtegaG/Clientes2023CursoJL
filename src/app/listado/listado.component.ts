@@ -9,12 +9,11 @@ import { ClienteService } from '../cliente.service';
 })
 export class ListadoComponent implements OnInit {
   clientes: Cliente[] = [];
-  
-  constructor(private clienteService: ClienteService) {}
 
-  ngOnInit(): void 
-  {
-    this.recargarClientes();  
+  constructor(private clienteService: ClienteService) { }
+
+  ngOnInit(): void {
+    this.recargarClientes();
   }
 
   private recargarClientes() {
@@ -23,8 +22,10 @@ export class ListadoComponent implements OnInit {
   }
 
   borrar(id: number): void {
-    this.clienteService.borrar(id).subscribe(
-      () => this.recargarClientes()
-    );
+    if (confirm(`¿Estás seguro de que quieres borrar el id = ${id}?`)) {
+      this.clienteService.borrar(id).subscribe(
+        () => this.recargarClientes()
+      );
+    }
   }
 }
