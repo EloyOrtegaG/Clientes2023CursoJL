@@ -1,5 +1,5 @@
-<div *ngIf="mensaje" class="alert alert-{{tipo}} alert-dismissible fade show" role="alert">
-  {{mensaje}}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<div *ngIf="mensajeService.alerta" class="alert alert-{{mensajeService.alerta.tipo}} alert-dismissible fade show" role="alert">
+  {{mensajeService.alerta.mensaje}}
+  <button (click)="mensajeService.borrar()" type="button" class="btn-close" aria-label="Close"></button>
 </div>
 

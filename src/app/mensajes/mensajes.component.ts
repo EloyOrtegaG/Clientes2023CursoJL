@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Alerta } from '../alerta';
+import { MensajeService } from '../mensaje.service';
 
 @Component({
   selector: 'app-mensajes',
@@ -6,6 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./mensajes.component.css']
 })
 export class MensajesComponent {
-  mensaje = 'Prueba de mensaje';
-  tipo = 'info';
+  constructor(public mensajeService: MensajeService) {}
 }
