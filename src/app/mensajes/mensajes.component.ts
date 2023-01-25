@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./mensajes.component.css']
 })
 export class MensajesComponent {
-
+  mensaje = 'Prueba de mensaje';
+  tipo = 'info';
 }
