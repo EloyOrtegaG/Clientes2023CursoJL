@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ListadoComponent } from './listado/listado.component';
 import { LabelInputComponent } from './label-input/label-input.component';
+import { MensajesComponent } from './mensajes/mensajes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoComponent,
     FormularioComponent,
-    LabelInputComponent
+    LabelInputComponent,
+    MensajesComponent
   ],
   imports: [
     BrowserModule,
