@@ -9,6 +9,7 @@ import { ClienteService } from '../cliente.service';
 })
 export class ListadoComponent implements OnInit {
   clientes: Cliente[] = [];
+  idBorrar?: number;
 
   constructor(private clienteService: ClienteService) { }
 
@@ -22,10 +23,8 @@ export class ListadoComponent implements OnInit {
   }
 
   borrar(id: number): void {
-    if (confirm(`¿Estás seguro de que quieres borrar el id = ${id}?`)) {
-      this.clienteService.borrar(id).subscribe(
-        () => this.recargarClientes()
-      );
-    }
+    this.clienteService.borrar(id).subscribe(
+      () => this.recargarClientes()
+    );
   }
 }
