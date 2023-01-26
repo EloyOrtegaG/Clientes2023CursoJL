@@ -11,6 +11,7 @@ import { ClienteService } from '../cliente.service';
 })
 export class FormularioComponent implements OnInit {
   cliente: Cliente = { id: 0, nombre: '', apellidos: '', telefono: '', email: '' };
+  validado: boolean = false;
 
   constructor(private clienteService: ClienteService, private route: ActivatedRoute, private location: Location) { }
 
@@ -20,18 +21,27 @@ export class FormularioComponent implements OnInit {
 
     if (id) {
       this.clienteService.obtenerPorId(+id).subscribe(
-        cliente => this.cliente = cliente!
+        cliente => {
+          this.cliente = cliente!;
+          this.validado = false;
+        }
       );
     }
   }
 
-  guardar() {
+  guardar(correcto: boolean) {
+    this.validado = true;
+
+    if(!correcto) {
+      return;
+    }
+
     if (this.cliente.id) {
       this.clienteService.modificar(this.cliente).subscribe();
     } else {
       this.clienteService.insertar(this.cliente).subscribe();
     }
-    
+
     this.location.back();
   }
 }
