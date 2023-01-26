@@ -1,30 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../cliente';
-import { ClienteService } from '../cliente.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css']
 })
-export class ListadoComponent implements OnInit {
-  clientes: Cliente[] = [];
+export class ListadoComponent {
+  @Input() filas: any[] = [];
+  @Input() campos: any[] = [];
+  @Input() urlListado: string = '/listado';
+  @Input() urlFormulario: string = '/formulario';
+  @Output() borradoClick = new EventEmitter<number>();
+
   idBorrar?: number;
 
-  constructor(private clienteService: ClienteService) { }
-
-  ngOnInit(): void {
-    this.recargarClientes();
-  }
-
-  private recargarClientes() {
-    this.clienteService.obtenerTodos().subscribe(clientes => this.clientes = clientes
-    );
-  }
-
   borrar(id: number): void {
-    this.clienteService.borrar(id).subscribe(
-      () => this.recargarClientes()
-    );
+    this.borradoClick.emit(id);
   }
 }

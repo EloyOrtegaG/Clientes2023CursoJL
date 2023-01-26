@@ -1,11 +1,11 @@
-<div>
+<form [ngClass]="validado?'was-validated':''" #form>
     <jl-label-input id="id" etiqueta="Id" tipo="number" [(dato)]="cliente.id" [soloLectura]="true" />
-    <jl-label-input id="nombre" etiqueta="Nombre" [(dato)]="cliente.nombre" />
-    <jl-label-input id="apellidos" etiqueta="Apellidos" [(dato)]="cliente.apellidos" />
+    <jl-label-input id="nombre" etiqueta="Nombre" [requerido]="true" [(dato)]="cliente.nombre" error="El nombre es requerido" />
+    <jl-label-input id="apellidos" etiqueta="Apellidos" [requerido]="true" [(dato)]="cliente.apellidos" error="Debes introducir los apellidos" />
     <jl-label-input id="telefono" etiqueta="Teléfono" tipo="tel" [(dato)]="cliente.telefono" />
     <jl-label-input id="email" etiqueta="Email" tipo="email" [(dato)]="cliente.email" />
-    <jl-label-input tipo="button" etiqueta="Aceptar" (botonClick)="guardar()"/>
-</div>
+    <jl-label-input tipo="button" etiqueta="Aceptar" (botonClick)="guardar(form.checkValidity())"/>
+</form>
 
 <!--<app-label-input id="nombre" [etiqueta]="'Nombre'" tipo="text" [dato]="cliente.nombre"
     (datoChange)="cliente.nombre = $event" />-->

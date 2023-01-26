@@ -1,8 +1,11 @@
 <div class="row mb-3">
     <label *ngIf="tipo !== 'button'" class="col-sm-1 col-form-label" for="{{id}}">{{etiqueta}}</label>
     <div class="col-sm-11" [ngClass]="{'offset-sm-1': tipo==='button'}">
-        <input *ngIf="tipo !== 'button'" id="{{id}}" [attr.readonly]="soloLectura ? 'readonly' : null" class="form-control" type="{{tipo}}" #miInput (input)="onInput(miInput.value)" value="{{dato}}">
+        <input *ngIf="tipo !== 'button'" id="{{id}}" [attr.required]="requerido ? 'required' : null" [attr.readonly]="soloLectura ? 'readonly' : null" class="form-control" type="{{tipo}}" #miInput (input)="onInput(miInput.value)"/>
         <button *ngIf="tipo === 'button'" class="btn btn-primary" (click)="onClick()">{{etiqueta}}</button>
+        <div class="invalid-feedback">
+            {{error}}
+        </div>
     </div>
 </div>
 

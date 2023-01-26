@@ -9,6 +9,9 @@ export class LabelInputComponent {
   @Input() id!: string;
   @Input() etiqueta: string = '';
   @Input() tipo: string = 'text';
+  @Input() requerido: boolean = false;
+  
+  @Input() error: string = 'El campo tiene un error';
   
   // DOBLE BINDING [(dato)]
   @Input() dato: any;
