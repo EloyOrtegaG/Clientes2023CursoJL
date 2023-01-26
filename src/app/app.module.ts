@@ -10,6 +10,7 @@ import { ListadoComponent } from './listado/listado.component';
 import { LabelInputComponent } from './label-input/label-input.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { ModalComponent } from './modal/modal.component';
+import { ClientesListadoComponent } from './clientes-listado/clientes-listado.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ModalComponent } from './modal/modal.component';
     FormularioComponent,
     LabelInputComponent,
     MensajesComponent,
-    ModalComponent
+    ModalComponent,
+    ClientesListadoComponent
   ],
   imports: [
     BrowserModule,
