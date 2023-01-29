@@ -5,7 +5,7 @@ import { ClienteService } from '../cliente.service';
 @Component({
   selector: 'app-clientes-listado',
   templateUrl: './clientes-listado.component.html',
-  styleUrls: ['./clientes-listado.component.css']
+  styleUrls: ['./clientes-listado.component.scss']
 })
 export class ClientesListadoComponent implements OnInit {
   filas: Cliente[] = [];

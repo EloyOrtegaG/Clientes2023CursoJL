@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'jl-label-input',
   templateUrl: './label-input.component.html',
-  styleUrls: ['./label-input.component.css']
+  styleUrls: ['./label-input.component.scss']
 })
 export class LabelInputComponent {
   @Input() id!: string;

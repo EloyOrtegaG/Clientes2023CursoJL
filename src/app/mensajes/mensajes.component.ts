@@ -5,7 +5,7 @@ import { MensajeService } from '../mensaje.service';
 @Component({
   selector: 'app-mensajes',
   templateUrl: './mensajes.component.html',
-  styleUrls: ['./mensajes.component.css']
+  styleUrls: ['./mensajes.component.scss']
 })
 export class MensajesComponent {
   constructor(public mensajeService: MensajeService) {}

@@ -7,7 +7,7 @@ import { ClienteService } from '../cliente.service';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.css']
+  styleUrls: ['./formulario.component.scss']
 })
 export class FormularioComponent implements OnInit {
   cliente: Cliente = { id: 0, nombre: '', apellidos: '', telefono: '', email: '' };
